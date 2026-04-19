@@ -18,6 +18,7 @@ app.use(helmet());
 // CORS Configuration
 const allowedOrigins = [
   process.env.CLIENT_URL,
+  'https://ngo-final-frontend3.onrender.com',
   'http://localhost:5173',
   'http://127.0.0.1:5173'
 ].filter(Boolean);
