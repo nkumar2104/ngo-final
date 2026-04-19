@@ -28,7 +28,7 @@ function Contact() {
     setSuccess('');
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://ngo-final-4.onrender.com';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://ngo-final-4.onrender.com/api';
       const response = await fetch(`${apiUrl}/contacts`, {
         method: 'POST',
         headers: {
