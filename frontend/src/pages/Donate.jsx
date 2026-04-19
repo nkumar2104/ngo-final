@@ -56,7 +56,7 @@ import LocationAutocomplete from '../componants/LocationAutocomplete';function D
     setSuccess('');
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://ngo-final-4.onrender.com';
       const response = await fetch(`${apiUrl}/donations`, {
         method: 'POST',
         headers: {
