@@ -24,12 +24,22 @@ const allowedOrigins = [
 ].filter(Boolean);
 
 app.use(cors({
-  origin: "https://ngo-final-frontend3.onrender.com",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || origin.endsWith('.vercel.app') || origin.endsWith('.onrender.com')) {
+      callback(null, true); // Origin is allowed
+    } else {
+      console.warn(`Blocked by CORS: ${origin}`);
+      callback(null, false); // Reject silently instead of throwing 500 Error
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  credentials: true,
+  optionsSuccessStatus: 200 // Fixes 204 issue on some browsers
 }));
-
-app.options('*', cors()); // 🔥 VERY IMPORTANT
 
 // Standard Middlewares
 app.use(express.json());
