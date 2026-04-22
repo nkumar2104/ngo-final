@@ -17,9 +17,9 @@ export default function Footer() {
               Empowering global change through technological excellence. We connect donors, passionate volunteers, and verified NGOs seamlessly across India.
             </p>
             <div className="flex gap-4 text-gray-400">
-              <a href="#" className="hover:text-[#004B8D] transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-[#004B8D] transition-colors"><Instagram size={20} /></a>
-              <a href="https://www.linkedin.com/in/sumit-raj-29402828b" target="_blank" rel="noopener noreferrer" className="hover:text-[#0A66C2] transition-colors"><Linkedin size={20} /></a>
+              <a href="https://x.com/nikkhil214" target="_blank" rel="noopener noreferrer" className="hover:text-[#004B8D] transition-colors"><Twitter size={20} /></a>
+              <a href="https://www.instagram.com/n_ikkhil/" target="_blank" rel="noopener noreferrer" className="hover:text-[#004B8D] transition-colors"><Instagram size={20} /></a>
+              <a href="https://www.linkedin.com/in/nikhilkr2104" target="_blank" rel="noopener noreferrer" className="hover:text-[#0A66C2] transition-colors"><Linkedin size={20} /></a>
             </div>
           </div>
           
