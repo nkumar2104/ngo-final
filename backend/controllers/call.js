@@ -14,17 +14,17 @@ const triggerAppreciationCall = async (donor, campaignId, ngoId) => {
     // If fully configured, dial
     if (twilioClient && process.env.TWILIO_PHONE_NUMBER) {
       const call = await twilioClient.calls.create({
-        url: `${process.env.SERVER_URL || 'http://localhost:5000'}/api/calls/twiml`,
+        url: `${process.env.SERVER_URL || 'https://ngo-final-4.onrender.com'}/api/calls/twiml`,
         to: donor.phone,
         from: process.env.TWILIO_PHONE_NUMBER,
-        statusCallback: `${process.env.SERVER_URL || 'http://localhost:5000'}/api/calls/webhook`,
+        statusCallback: `${process.env.SERVER_URL || 'https://ngo-final-4.onrender.com'}/api/calls/webhook`,
         statusCallbackEvent: ['answered', 'completed']
       });
       callSid = call.sid;
       console.log(`[LIVE] Appreciation call initiated: ${callSid} to ${donor.phone}`);
     } else {
       const reason = !twilioClient ? 'Twilio not configured (check SID/AuthToken)' : 'TWILIO_PHONE_NUMBER missing';
-      console.log(`[STUB] Appreciation call skipped (${reason}). Would use TwiML: ${process.env.SERVER_URL || 'http://localhost:5000'}/api/calls/twiml`);
+      console.log(`[STUB] Appreciation call skipped (${reason}). Would use TwiML: ${process.env.SERVER_URL || 'https://ngo-final-4.onrender.com'}/api/calls/twiml`);
     }
 
     // Always create a log

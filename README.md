@@ -101,7 +101,7 @@ npm start
 ```
 
 ✅ **Frontend** will run on: `http://localhost:5173` (or your configured port)
-✅ **Backend API** will run on: `http://localhost:5000`
+✅ **Backend API** will run on: `https://ngo-final-4.onrender.com`
 
 ---
 
