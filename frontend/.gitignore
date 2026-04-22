@@ -11,3 +11,11 @@ yarn-error.log*
 # OS files
 .DS_Store
 
+# Build output
+dist/
+dist-ssr/
+
+# Environment files
+.env
+.env.*
+!.env.example
